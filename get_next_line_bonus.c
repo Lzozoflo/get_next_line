@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 09:49:31 by fcretin           #+#    #+#             */
-/*   Updated: 2024/12/03 12:31:51 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/12/03 12:09:44 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_mmv(char *buff, char *line)
 {
@@ -52,13 +52,13 @@ char	*ft_reader(int fd, char *buff, char *line)
 
 char	*get_next_line(int fd)
 {
-	static char	buff[BUFFER_SIZE + 1];
+	static char	buff[MAX_FD][BUFFER_SIZE + 1];
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || MAX_FD <= 0)
 		return (NULL);
 	line = NULL;
-	line = ft_reader(fd, buff, line);
+	line = ft_reader(fd, buff[fd], line);
 	if (!line)
 		return (NULL);
 	return (line);

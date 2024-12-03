@@ -2,4 +2,4 @@ a.out
 object
 *.txt
 .vscode
-main
+main.c
