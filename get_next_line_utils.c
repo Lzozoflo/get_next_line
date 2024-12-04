@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 09:38:20 by fcretin           #+#    #+#             */
-/*   Updated: 2024/12/03 12:32:08 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/12/04 13:28:30 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ size_t	ft_strlen(const char *str)
 	size_t	i;
 
 	i = 0;
-	if (!str)
-		return (i);
 	while (str[i])
 		i++;
 	return (i);
@@ -70,32 +68,4 @@ void	*ft_memmove(void *dest, const void *src, size_t size)
 		}
 	}
 	return (dest);
-}
-
-char	*ft_strjoin(char *s1, const char *s2)
-{
-	char	*str;
-	int		i;
-	int		j;
-
-	i = 0;
-	j = 0;
-	if (!s1)
-	{
-		s1 = malloc(sizeof(char) * 1);
-		if (!s1)
-			return (NULL);
-		s1[0] = '\0';
-	}
-	str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (!str)
-		return (NULL);
-	while (s1[i])
-		str[j++] = s1[i++];
-	i = 0;
-	while (s2[i] && s2[i - 1] != '\n')
-		str[j++] = s2[i++];
-	str[j] = '\0';
-	free(s1);
-	return (str);
 }

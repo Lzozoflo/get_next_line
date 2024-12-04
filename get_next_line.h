@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 09:38:23 by fcretin           #+#    #+#             */
-/*   Updated: 2024/12/03 12:31:32 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/12/04 13:17:44 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,5 @@ size_t	ft_strlen(const char *str);
 void	ft_bzero(void *p, size_t c);
 char	*ft_strchr(const char *str, int c);
 void	*ft_memmove(void *dest, const void *src, size_t size);
-char	*ft_strjoin(char *s1, const char *s2);
 
 #endif
